@@ -1,43 +1,41 @@
 {
-    "nix.enableLanguageServer": true, // Enable LSP.
-    "nix.serverPath": "nil", // The path to the LSP server executable.
-    "nix.serverSettings": {
-        "nil": {
-            "formatting": {
-                "command": [
-                    "alejandra"
-                ]
-            }
-        }
-    },
-    "editor.formatOnSave": true,
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode"
-    },
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#b24525",
-        "activityBar.background": "#b24525",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#26b948",
-        "activityBarBadge.foreground": "#15202b",
-        "commandCenter.border": "#e7e7e799",
-        "sash.hoverBorder": "#b24525",
-        "statusBar.background": "#88351c",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#b24525",
-        "statusBarItem.remoteBackground": "#88351c",
-        "statusBarItem.remoteForeground": "#e7e7e7",
-        "titleBar.activeBackground": "#88351c",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#88351c99",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "#88351c",
-    "editor.quickSuggestions": {
-        "strings": true
-    },
-    "files.associations": {
-        "*.css": "tailwindcss"
+  "nix.enableLanguageServer": true, // Enable LSP.
+  "nix.serverPath": "nil", // The path to the LSP server executable.
+  "nix.serverSettings": {
+    "nil": {
+      "formatting": {
+        "command": ["alejandra"]
+      }
     }
+  },
+  "editor.formatOnSave": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#b24525",
+    "activityBar.background": "#b24525",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#26b948",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#b24525",
+    "statusBar.background": "#88351c",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#b24525",
+    "statusBarItem.remoteBackground": "#88351c",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#88351c",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#88351c99",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#88351c",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }

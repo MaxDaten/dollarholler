@@ -28,10 +28,10 @@ npm run dev -- --open
 ### Additional _Visual Studio Code_ Setup
 
 1. CMD+Shift+P: `Preferences: Open User Settings (JSON)`
-    ```json
-        "svelte.language-server.runtime": "node",
-    ```
-    To setup the svelte extension to use the node in path (sadly user settings can't be provisioned via nix)
+   ```json
+       "svelte.language-server.runtime": "node",
+   ```
+   To setup the svelte extension to use the node in path (sadly user settings can't be provisioned via nix)
 
 ## Building
 
