@@ -1,3 +1,20 @@
+/* Source Sans */
+/* Regular */
+@import "@fontsource/source-sans-pro/400.css";
+@import "@fontsource/source-sans-pro/400-italic.css";
+/* Bold */
+@import "@fontsource/source-sans-pro/700.css";
+@import "@fontsource/source-sans-pro/700-italic.css";
+/* Extra Bold */
+@import "@fontsource/source-sans-pro/900.css";
+
+/* Source Code */
+@import "@fontsource/source-code-pro/400.css";
+@import "@fontsource/source-code-pro/800.css";
+
+/* Kalam */
+@import "@fontsource/kalam/400.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
