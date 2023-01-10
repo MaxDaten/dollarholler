@@ -9,6 +9,17 @@ const config = {
 
 	kit: {
 		adapter: adapter()
+	},
+	vitePlugin: {
+		experimental: {
+			// https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/config.md#inspector
+			inspector: {
+				toggleButtonPos: 'bottom-left',
+				toggleKeyCombo: 'meta-shift',
+				showToggleButton: 'active',
+				holdMode: true,
+			},
+		},
 	}
 };
 

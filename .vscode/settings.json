@@ -33,4 +33,10 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#88351c",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    }
 }
