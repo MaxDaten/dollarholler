@@ -4,10 +4,13 @@
   "nix.serverSettings": {
     "nil": {
       "formatting": {
-        "command": ["alejandra"]
+        "command": [
+          "alejandra"
+        ]
       }
     }
   },
+  "workbench.editor.labelFormat": "short",
   "editor.formatOnSave": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
