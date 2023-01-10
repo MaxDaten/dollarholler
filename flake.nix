@@ -15,6 +15,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [devshell.overlay];
+        config.allowUnfree = true;
       };
     in {
       devShell = pkgs.devshell.mkShell {
@@ -25,6 +26,24 @@
           envsubst
           bash-completion
           shellcheck
+
+          # Nix
+          alejandra # Formatting
+          nil # Language Server
+          (vscode-with-extensions.override
+            {
+              vscodeExtensions = with vscode-extensions; [
+                # Environment
+                johnpapa.vscode-peacock
+                jnoortheen.nix-ide
+                kamadorueda.alejandra
+                mkhl.direnv
+
+                # Project
+                svelte.svelte-vscode
+                bradlc.vscode-tailwindcss
+              ];
+            })
 
           # frontend
           nodejs-18_x
