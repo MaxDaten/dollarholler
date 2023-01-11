@@ -29,6 +29,14 @@
     }
 }
 
-@layer components {}
+@layer components {
+    .invoice-table {
+        @apply grid grid-cols-invoiceTable gap-4 px-6 mb-3 w-full
+    }
+}
 
-@layer utilities {}
+@layer utilities {
+    .center {
+        @apply flex items-center justify-center;
+    }
+}
