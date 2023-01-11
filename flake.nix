@@ -32,17 +32,26 @@
           nil # Language Server
           (vscode-with-extensions.override
             {
-              vscodeExtensions = with vscode-extensions; [
-                # Environment
-                johnpapa.vscode-peacock
-                jnoortheen.nix-ide
-                kamadorueda.alejandra
-                mkhl.direnv
+              vscodeExtensions = with vscode-extensions;
+                [
+                  # Environment
+                  johnpapa.vscode-peacock
+                  jnoortheen.nix-ide
+                  kamadorueda.alejandra
+                  mkhl.direnv
 
-                # Project
-                svelte.svelte-vscode
-                bradlc.vscode-tailwindcss
-              ];
+                  # Project
+                  svelte.svelte-vscode
+                  bradlc.vscode-tailwindcss
+                ]
+                ++ vscode-utils.extensionsFromVscodeMarketplace [
+                  {
+                    name = "lorem-ipsum";
+                    publisher = "Tyriar";
+                    version = "1.3.1";
+                    sha256 = "iBOeyrLTs5CQy/qnW9WoWMxt2Z03XHUrcJ2lyHjKmZk=";
+                  }
+                ];
             })
 
           # frontend
