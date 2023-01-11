@@ -23,5 +23,12 @@
     body {
         @apply font-sans
     }
+
+    svg {
+        @apply fill-current
+    }
 }
 
+@layer components {}
+
+@layer utilities {}
