@@ -44,3 +44,10 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+## Noteworthy Deviation from the Course
+
+- Use self-hosted fonts via [fontsource](https://fontsource.org/fonts)
+- Nixified dev environment including vscode & extensions
+- Added experimental [vite inspector](https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/config.md#inspector)
