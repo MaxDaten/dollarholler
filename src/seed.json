@@ -1,0 +1,136 @@
+{
+    "invoices": [
+        {
+            "client": {
+                "clientStatus": "active",
+                "city": "New York",
+                "email": "example@gmail.com",
+                "id": "001",
+                "name": "John Smith",
+                "state": "NY",
+                "street": "123 Main St",
+                "zip": "10001"
+            },
+            "createdAt": "2022-01-01T00:00:00.000Z",
+            "dueDate": "2022-01-31T00:00:00.000Z",
+            "id": "invoice_001",
+            "invoiceNumber": "001",
+            "invoiceStatus": "sent",
+            "issueDate": "2022-01-01T00:00:00.000Z",
+            "lineItems": [
+                {
+                    "amount": 50,
+                    "description": "Consulting services",
+                    "id": "item_001",
+                    "quantity": 2
+                },
+                {
+                    "amount": 25,
+                    "description": "Project management",
+                    "id": "item_002",
+                    "quantity": 1
+                }
+            ],
+            "notes": "**Please** pay within 30 days.",
+            "subject": "Invoice for January 2022",
+            "terms": "Payment is due within 30 days."
+        },
+        {
+            "client": {
+                "clientStatus": "archived",
+                "city": "San Francisco",
+                "email": "example2@gmail.com",
+                "id": "002",
+                "name": "Jane Doe",
+                "state": "CA",
+                "street": "456 Market St",
+                "zip": "94103"
+            },
+            "createdAt": "2022-02-01T00:00:00.000Z",
+            "dueDate": "2022-02-28T00:00:00.000Z",
+            "id": "invoice_002",
+            "invoiceNumber": "002",
+            "invoiceStatus": "draft",
+            "issueDate": "2022-02-01T00:00:00.000Z",
+            "lineItems": [
+                {
+                    "amount": 100,
+                    "description": "Web development",
+                    "id": "item_003",
+                    "quantity": 5
+                }
+            ],
+            "subject": "Invoice for February 2022"
+        },
+        {
+            "client": {
+                "clientStatus": "active",
+                "city": "Los Angeles",
+                "email": "example3@gmail.com",
+                "id": "003",
+                "name": "Bob Johnson",
+                "state": "CA",
+                "street": "789 Elm St",
+                "zip": "90210"
+            },
+            "createdAt": "2022-03-01T00:00:00.000Z",
+            "dueDate": "2022-03-31T00:00:00.000Z",
+            "id": "invoice_003",
+            "invoiceNumber": "003",
+            "invoiceStatus": "paid",
+            "issueDate": "2022-03-01T00:00:00.000Z",
+            "lineItems": [
+                {
+                    "amount": 75,
+                    "description": "Graphic design",
+                    "id": "item_004",
+                    "quantity": 4
+                },
+                {
+                    "amount": 20,
+                    "description": "Photography",
+                    "id": "item_005",
+                    "quantity": 1
+                }
+            ],
+            "notes": "**Thank you** for your business!",
+            "subject": "Invoice for March 2022",
+            "terms": "Payment received on _03/15/2022_."
+        },
+        {
+            "client": {
+                "clientStatus": "active",
+                "city": "Chicago",
+                "email": "example4@gmail.com",
+                "id": "004",
+                "name": "Sophia Taylor",
+                "state": "IL",
+                "street": "369 Oak St",
+                "zip": "60654"
+            },
+            "createdAt": "2022-04-01T00:00:00.000Z",
+            "dueDate": "2022-04-30T00:00:00.000Z",
+            "id": "invoice_004",
+            "invoiceNumber": "004",
+            "invoiceStatus": "sent",
+            "issueDate": "2022-04-01T00:00:00.000Z",
+            "lineItems": [
+                {
+                    "amount": 50,
+                    "description": "Writing services",
+                    "id": "item_006",
+                    "quantity": 2
+                },
+                {
+                    "amount": 20,
+                    "description": "Editing services",
+                    "id": "item_007",
+                    "quantity": 1
+                }
+            ],
+            "notes": "Payment due on 05/15/2022.",
+            "subject": "Invoice for April 2022",
+            "terms": "Payment is due within 45 days."
+        }
+    ]
+}
