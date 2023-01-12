@@ -18,3 +18,13 @@ export const twoDecimals = (myNum: number): string => {
 export const addThousandsSeperator = (myNum: string): string => {
     return myNum.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
+
+export const sumInvoices = (invoices: Invoice[] = []): number => {
+    return invoices.reduce(
+        (prev, cur) => {
+            const invoiceSum = sumLineItems(cur.lineItems)
+            return prev + invoiceSum
+        },
+        0
+    )
+}

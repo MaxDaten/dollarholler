@@ -12,7 +12,7 @@
                 "zip": "10001"
             },
             "createdAt": "2022-01-01T00:00:00.000Z",
-            "dueDate": "2022-01-31T00:00:00.000Z",
+            "dueDate": "2023-12-31T00:00:00.000Z",
             "id": "invoice_001",
             "invoiceNumber": "001",
             "invoiceStatus": "sent",
@@ -73,13 +73,13 @@
             "issueDate": "2022-03-01T00:00:00.000Z",
             "lineItems": [
                 {
-                    "amount": 7500,
+                    "amount": 75000,
                     "description": "Graphic design",
                     "id": "item_004",
                     "quantity": 4
                 },
                 {
-                    "amount": 2000,
+                    "amount": 20000,
                     "description": "Photography",
                     "id": "item_005",
                     "quantity": 1
@@ -108,13 +108,13 @@
             "issueDate": "2022-04-01T00:00:00.000Z",
             "lineItems": [
                 {
-                    "amount": 5000,
+                    "amount": 50000,
                     "description": "Writing services",
                     "id": "item_006",
                     "quantity": 2
                 },
                 {
-                    "amount": 2000,
+                    "amount": 20000,
                     "description": "Editing services",
                     "id": "item_007",
                     "quantity": 1
