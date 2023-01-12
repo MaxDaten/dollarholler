@@ -20,7 +20,6 @@
           {#if option.icon}
             <svelte:component this={option.icon} />
           {/if}
-
           {option.label}
         </button>
       </li>
@@ -30,7 +29,7 @@
 
 <style lang="postcss">
   li {
-    @apply border-b-2 bg-whisper;
+    @apply border-b-2 border-whisper;
   }
 
   li:last-child {
