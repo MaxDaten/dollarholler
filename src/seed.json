@@ -19,13 +19,13 @@
             "issueDate": "2022-01-01T00:00:00.000Z",
             "lineItems": [
                 {
-                    "amount": 50,
+                    "amount": 50000,
                     "description": "Consulting services",
                     "id": "item_001",
                     "quantity": 2
                 },
                 {
-                    "amount": 25,
+                    "amount": 250000,
                     "description": "Project management",
                     "id": "item_002",
                     "quantity": 1
@@ -52,14 +52,6 @@
             "invoiceNumber": "002",
             "invoiceStatus": "draft",
             "issueDate": "2022-02-01T00:00:00.000Z",
-            "lineItems": [
-                {
-                    "amount": 100,
-                    "description": "Web development",
-                    "id": "item_003",
-                    "quantity": 5
-                }
-            ],
             "subject": "Invoice for February 2022"
         },
         {
@@ -81,13 +73,13 @@
             "issueDate": "2022-03-01T00:00:00.000Z",
             "lineItems": [
                 {
-                    "amount": 75,
+                    "amount": 7500,
                     "description": "Graphic design",
                     "id": "item_004",
                     "quantity": 4
                 },
                 {
-                    "amount": 20,
+                    "amount": 2000,
                     "description": "Photography",
                     "id": "item_005",
                     "quantity": 1
@@ -116,13 +108,13 @@
             "issueDate": "2022-04-01T00:00:00.000Z",
             "lineItems": [
                 {
-                    "amount": 50,
+                    "amount": 5000,
                     "description": "Writing services",
                     "id": "item_006",
                     "quantity": 2
                 },
                 {
-                    "amount": 20,
+                    "amount": 2000,
                     "description": "Editing services",
                     "id": "item_007",
                     "quantity": 1
