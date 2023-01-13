@@ -1,11 +1,32 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
   import Trash from '$lib/components/Icon/Trash.svelte';
+  import { dollarsToCents, twoDecimals } from '$lib/components/utils/moneyHelpers';
+
   export let lineItem: LineItem;
+  export let canDelete = false;
+
+  let dispatch = createEventDispatcher();
+
+  let unitPrice: string = twoDecimals(lineItem.amount / lineItem.quantity);
+  let amount: string = twoDecimals(lineItem.amount);
+
+  $: {
+    amount = twoDecimals(lineItem.quantity * Number(unitPrice));
+    lineItem.amount = dollarsToCents(Number(amount));
+  }
 </script>
 
 <div class="invoice-line-item border-b-2 border-fog py-2">
   <div>
-    <input class="line-item" type="text" name="description" id="description" />
+    <input
+      class="line-item"
+      type="text"
+      name="description"
+      id="description"
+      bind:value={lineItem.description}
+    />
   </div>
 
   <div>
@@ -16,6 +37,11 @@
       id="unitPrice"
       step="0.01"
       min="0"
+      bind:value={unitPrice}
+      on:blur={() => {
+        unitPrice = twoDecimals(Number(unitPrice));
+        dispatch('updateLineItem');
+      }}
     />
   </div>
 
@@ -27,6 +53,10 @@
       id="quantity"
       step="1"
       min="0"
+      bind:value={lineItem.quantity}
+      on:blur={() => {
+        dispatch('updateLineItem');
+      }}
     />
   </div>
 
@@ -38,11 +68,22 @@
       id="amount"
       step="0.01"
       min="0"
+      bind:value={amount}
+      disabled
     />
   </div>
 
   <div>
-    <button class="center h-10 w-10 text-pastelPurple hover:text-lavenderIndigo"><Trash /></button>
+    {#if canDelete}
+      <button
+        class="center h-10 w-10 text-pastelPurple hover:text-lavenderIndigo"
+        on:click|preventDefault={() => {
+          dispatch('removeLineItem', lineItem.id);
+        }}
+      >
+        <Trash />
+      </button>
+    {/if}
   </div>
 </div>
 
@@ -61,5 +102,9 @@
   input[type='text']:focus,
   input[type='number']:focus {
     @apply border-solid border-lavenderIndigo outline-none;
+  }
+  input[type='number']:disabled,
+  input[type='text']:disabled {
+    @apply border-b-0 bg-transparent px-0;
   }
 </style>

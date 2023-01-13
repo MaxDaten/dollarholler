@@ -1,28 +1,30 @@
 <script lang="ts">
+  import { v4 as uuidv4 } from 'uuid';
+
   import Button from '$lib/components/Button.svelte';
   import Trash from '$lib/components/Icon/Trash.svelte';
   import LineItemRows from './LineItemRows.svelte';
 
-  const blankLineItem: LineItem[] = [
-    {
-      amount: 12.99,
-      description: 'Item 1',
-      id: '1',
-      quantity: 2
-    },
-    {
-      amount: 9.99,
-      description: 'Item 2',
-      id: '2',
-      quantity: 1
-    },
-    {
-      amount: 5.99,
-      description: 'Item 3',
-      id: '3',
-      quantity: 3
-    }
-  ];
+  const blankLineItem: LineItem = {
+    amount: 0,
+    description: '',
+    id: '1',
+    quantity: 0
+  };
+
+  let lineItems: LineItem[] = [{ ...blankLineItem }];
+
+  const AddLineItem = () => {
+    lineItems = [...lineItems, { ...blankLineItem, id: uuidv4() }];
+  };
+
+  const RemoveLineItem = (event: CustomEvent<string>) => {
+    lineItems = lineItems.filter((item) => item.id !== event.detail);
+  };
+
+  const UpdateLineItem = () => {
+    lineItems = lineItems;
+  };
 </script>
 
 <h2 class="mb-7 font-sans text-3xl font-bold text-daisyBush">Add an Invoice</h2>
@@ -66,7 +68,12 @@
 
   <!-- Line Items -->
   <div class="field col-span-6">
-    <LineItemRows lineItems={blankLineItem} />
+    <LineItemRows
+      {lineItems}
+      on:addLineItem={AddLineItem}
+      on:removeLineItem={RemoveLineItem}
+      on:updateLineItem={UpdateLineItem}
+    />
   </div>
 
   <!-- Notes -->

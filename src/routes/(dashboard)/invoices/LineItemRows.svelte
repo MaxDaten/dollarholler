@@ -1,8 +1,32 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import Button from '$lib/components/Button.svelte';
   import CircledAmount from '$lib/components/CircledAmount.svelte';
   import LineItemRow from './LineItemRow.svelte';
+  import {
+    centsToDollars,
+    dollarsToCents,
+    sumLineItems,
+    twoDecimals
+  } from '$lib/components/utils/moneyHelpers';
+
   export let lineItems: LineItem[] = [];
+
+  let subtotal: string = '0.00';
+  let discount: number;
+  let discountedAmount: string = '0.00';
+
+  let dispatch = createEventDispatcher();
+
+  $: if (sumLineItems(lineItems) > 0) {
+    subtotal = centsToDollars(sumLineItems(lineItems));
+  }
+
+  $: if (subtotal && discount) {
+    discountedAmount = centsToDollars(sumLineItems(lineItems) * (discount / 100));
+  }
+
+  $: total = twoDecimals(parseFloat(subtotal) - parseFloat(discountedAmount));
 </script>
 
 <div class="invoice-line-item border-b-2 border-daisyBush pb-2">
@@ -12,16 +36,23 @@
   <div class="table-header text-right">Amount</div>
 </div>
 
-{#each lineItems as lineItem}
-  <LineItemRow {lineItem} />
+{#each lineItems as lineItem, index}
+  <LineItemRow {lineItem} on:removeLineItem canDelete={index > 0} on:updateLineItem />
 {/each}
 
 <div class="invoice-line-item">
   <div class="col-span-2">
-    <Button label="+ Line Item" style="textOnly" onClick={() => {}} isAnimated={false} />
+    <Button
+      label="+ Line Item"
+      style="textOnly"
+      onClick={() => {
+        dispatch('addLineItem');
+      }}
+      isAnimated={false}
+    />
   </div>
   <div class="py-5 text-right font-bold text-monsoon">Subtotal</div>
-  <div class="py-5 text-right font-mono">$250.00</div>
+  <div class="py-5 text-right font-mono">${subtotal}</div>
 </div>
 
 <div class="invoice-line-item">
@@ -34,15 +65,16 @@
       id="discount"
       min="0"
       max="100"
+      bind:value={discount}
     />
     <span class="absolute right-0 top-2 font-mono">%</span>
   </div>
-  <div class="py-5 text-right font-mono">$10.00</div>
+  <div class="py-5 text-right font-mono">${discountedAmount}</div>
 </div>
 
 <div class="invoice-line-item">
   <div class="col-span-6">
-    <CircledAmount label="Total:" amount="$1,444.00" />
+    <CircledAmount label="Total:" amount={`$${total}`} />
   </div>
 </div>
 

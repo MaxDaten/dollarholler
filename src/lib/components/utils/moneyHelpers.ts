@@ -11,6 +11,13 @@ export const centsToDollars = (cents: number): string => {
     return addThousandsSeperator(addDecimals)
 }
 
+
+export const dollarsToCents = (dollars: number): number => {
+    const cents = dollars * 100
+    return cents
+}
+
+
 export const twoDecimals = (myNum: number): string => {
     return myNum.toFixed(2);
 }
