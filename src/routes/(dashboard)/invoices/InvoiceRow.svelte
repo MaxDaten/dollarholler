@@ -8,12 +8,18 @@
   import Tag from '$lib/components/Tag.svelte';
   import { formatDate, isLate } from '$lib/components/utils/dateHelpers';
   import { centsToDollars, sumLineItems } from '$lib/components/utils/moneyHelpers';
+  import Modal from '$lib/components/Modal.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import { deleteInvoice } from '$lib/stores/InvoiceStore';
 
   export let invoice: Invoice;
   let isAdditionalMenuShowing = false;
   let isOptionsDisabled = false;
+  let isModalShowing = false;
 
   const handleDelete = () => {
+    isModalShowing = true;
+    isAdditionalMenuShowing = false;
     console.log('deleting');
   };
 
@@ -53,10 +59,10 @@
   <div class="amount text-right font-mono text-sm font-bold lg:text-lg">
     ${centsToDollars(sumLineItems(invoice.lineItems))}
   </div>
-  <div class="viewButton center hidden text-sm lg:flex lg:text-lg">
+  <div class="viewButton lg:center hidden text-sm lg:flex lg:text-lg">
     <a href="#" class="text-pastelPurple hover:text-daisyBush"><View /></a>
   </div>
-  <div class="moreButton center relative hidden text-sm lg:flex lg:text-lg">
+  <div class="moreButton lg:center relative hidden text-sm lg:flex lg:text-lg">
     <button
       class="text-pastelPurple hover:text-daisyBush"
       on:click={() => {
@@ -74,6 +80,36 @@
     {/if}
   </div>
 </div>
+
+<Modal isVisible={isModalShowing} on:close={() => (isModalShowing = false)}>
+  <!-- min-h-[175px] is the modal min-h-[250px] - (2 x 28px padding) -->
+  <div class="flex h-full min-h-[175px] flex-col items-center justify-between gap-6">
+    <div class="text-center text-xl font-bold text-daisyBush">
+      Are you sure you want to delete the invoice?
+      <span class="text-scarlet">{invoice.client.name}</span> for
+      <span class="text-scarlet">${centsToDollars(sumLineItems(invoice.lineItems))}</span>
+    </div>
+    <div class="flex gap-4">
+      <Button
+        label="Cancel"
+        onClick={() => {
+          isModalShowing = false;
+        }}
+        style="secondary"
+        isAnimated={false}
+      />
+      <Button
+        label="Yes, Delete It"
+        onClick={() => {
+          deleteInvoice(invoice);
+          isModalShowing = false;
+        }}
+        style="destructive"
+        isAnimated={false}
+      />
+    </div>
+  </div>
+</Modal>
 
 <style lang="postcss">
   .invoice-row {
