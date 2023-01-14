@@ -124,5 +124,57 @@
             "subject": "Invoice for April 2022",
             "terms": "Payment is due within 45 days."
         }
+    ],
+    "clients": [
+        {
+            "clientStatus": "active",
+            "city": "New York",
+            "email": "info@sparkle-tech.com",
+            "id": "1",
+            "name": "Sparkle Tech Inc.",
+            "state": "NY",
+            "street": "123 Main St",
+            "zip": "10001"
+        },
+        {
+            "clientStatus": "active",
+            "city": "Los Angeles",
+            "email": "info@oceanic-ventures.com",
+            "id": "2",
+            "name": "Oceanic Ventures LLC",
+            "state": "CA",
+            "street": "456 Park Ave",
+            "zip": "90001"
+        },
+        {
+            "clientStatus": "archived",
+            "city": "Chicago",
+            "email": "info@smart-city-solutions.com",
+            "id": "3",
+            "name": "Smart City Solutions Inc.",
+            "state": "IL",
+            "street": "789 Elm St",
+            "zip": "60601"
+        },
+        {
+            "clientStatus": "active",
+            "city": "Houston",
+            "email": "info@green-energy-co.com",
+            "id": "4",
+            "name": "Green Energy Co.",
+            "state": "TX",
+            "street": "321 Oak St",
+            "zip": "77001"
+        },
+        {
+            "clientStatus": "archived",
+            "city": "Phoenix",
+            "email": "info@future-transportation.com",
+            "id": "5",
+            "name": "Future Transportation LLC",
+            "state": "AZ",
+            "street": "159 Pine St",
+            "zip": "85001"
+        }
     ]
 }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { clients, loadClients } from '$lib/stores/ClientStore';
   import { slide } from 'svelte/transition';
   import { v4 as uuidv4 } from 'uuid';
 
@@ -6,6 +7,7 @@
   import Trash from '$lib/components/Icon/Trash.svelte';
   import LineItemRows from './LineItemRows.svelte';
   import { states } from '$lib/components/utils/states';
+  import { onMount } from 'svelte';
 
   const blankLineItem: LineItem = {
     amount: 0,
@@ -28,6 +30,10 @@
   const UpdateLineItem = () => {
     lineItems = lineItems;
   };
+
+  onMount(() => {
+    loadClients();
+  });
 </script>
 
 <h2 class="mb-7 font-sans text-3xl font-bold text-daisyBush">Add an Invoice</h2>
@@ -39,7 +45,9 @@
       <label for="client">Client</label>
       <div class="flex items-end gap-x-5">
         <select name="client" id="client">
-          <option value="briends">Briends GmbH</option>
+          {#each $clients as client}
+            <option value={client.id}>{client.name}</option>
+          {/each}
         </select>
 
         <div class="text-base font-bold leading-[3.5rem] text-monsoon">or</div>
