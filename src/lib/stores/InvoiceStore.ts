@@ -8,6 +8,11 @@ export const loadInvoices = () => {
     // invoices.set([])
 }
 
+export const addInvoice = (invoiceToAdd: Invoice): Invoice => {
+    invoices.update((prev: Invoice[]) => [...prev, invoiceToAdd])
+    return invoiceToAdd
+}
+
 export const deleteInvoice = (invoiceToDelete: Invoice): Invoice => {
     invoices.update((prev: Invoice[]) => {
         return prev.filter((cur: Invoice) => cur.id !== invoiceToDelete.id)

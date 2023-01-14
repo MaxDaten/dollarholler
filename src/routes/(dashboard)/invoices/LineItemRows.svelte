@@ -8,7 +8,7 @@
   export let lineItems: LineItem[] = [];
 
   let subtotal: string = '0.00';
-  let discount: number;
+  export let discount: number = 0;
   let discountedAmount: string = '0.00';
 
   let dispatch = createEventDispatcher();
@@ -21,7 +21,7 @@
     discountedAmount = centsToDollars(sumLineItems(lineItems) * (discount / 100));
   }
 
-  $: total = twoDecimals(parseFloat(subtotal) - parseFloat(discountedAmount));
+  $: total = twoDecimals(Number(subtotal) - Number(discountedAmount));
 </script>
 
 <div class="invoice-line-item border-b-2 border-daisyBush pb-2">
