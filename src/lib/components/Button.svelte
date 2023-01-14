@@ -16,7 +16,7 @@
 
 <button
   on:click|preventDefault={() => onClick()}
-  class="relative flex items-center whitespace-nowrap rounded-lg px-5 py-2 font-sans text-base font-black text-white  lg:py-3 lg:px-10 lg:text-xl"
+  class="button"
   class:primary={style === 'primary'}
   class:secondary={style === 'secondary'}
   class:destructive={style === 'destructive'}

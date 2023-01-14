@@ -8,6 +8,7 @@
   import LineItemRows from './LineItemRows.svelte';
   import { states } from '$lib/components/utils/states';
   import { onMount } from 'svelte';
+  import { today } from '$lib/components/utils/dateHelpers';
 
   const blankLineItem: LineItem = {
     amount: 0,
@@ -44,7 +45,8 @@
     {#if !isNewClient}
       <label for="client">Client</label>
       <div class="flex items-end gap-x-5">
-        <select name="client" id="client">
+        <select name="client" id="client" required={!isNewClient}>
+          <option />
           {#each $clients as client}
             <option value={client.id}>{client.name}</option>
           {/each}
@@ -61,9 +63,10 @@
         />
       </div>
     {:else}
+      <!-- New Client -->
       <label for="NewClient">New Client</label>
       <div class="flex items-end gap-x-5">
-        <input type="text" name="newClient" id="newClient" />
+        <input type="text" name="newClient" id="newClient" required={isNewClient} />
         <div class="text-base font-bold leading-[3.5rem] text-monsoon">or</div>
         <Button
           label="Existing Client"
@@ -79,8 +82,8 @@
 
   <!-- Invoice Id -->
   <div class="field col-span-2">
-    <label for="id">Invoice Id</label>
-    <input type="number" name="id" />
+    <label for="invoiceNumber">Invoice Id</label>
+    <input type="number" name="invoiceNumber" required />
   </div>
 
   <!-- New Client -->
@@ -88,7 +91,7 @@
     <div class="field col-span-6 grid gap-x-5" transition:slide>
       <div class="field col-span-6">
         <label for="email">Client's Email</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" required={isNewClient} />
       </div>
 
       <div class="field col-span-6">
@@ -121,13 +124,13 @@
   <!-- Due Date -->
   <div class="field col-span-2">
     <label for="dueDate">Due Date</label>
-    <input type="date" name="dueDate" />
+    <input type="date" name="dueDate" min={today} required />
   </div>
 
   <!-- Issue Date -->
   <div class="field col-span-2 col-start-5">
     <label for="issueDate">Issue Date</label>
-    <input type="date" name="issueDate" />
+    <input type="date" name="issueDate" min={today} />
   </div>
 
   <!-- Subject -->
@@ -180,6 +183,10 @@
   </div>
   <div class="field col-span-4 flex justify-end gap-x-5">
     <Button label="Cancel" onClick={() => {}} style="secondary" isAnimated={false} />
-    <Button label="Save" onClick={() => {}} style="primary" isAnimated={false} />
+    <!-- <Button label="Save" onClick={() => {}} style="primary" isAnimated={false} /> -->
+    <button
+      class="button translate-y-0 bg-lavenderIndigo text-white shadow-colored transition-all hover:-translate-y-2 hover:shadow-coloredHover"
+      type="submit">Save</button
+    >
   </div>
 </form>

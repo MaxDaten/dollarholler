@@ -1,4 +1,6 @@
-import { isBefore } from "date-fns"
+import { format, isBefore } from "date-fns"
+
+export const today = format(new Date(), 'yyyy-MM-dd')
 
 export const formatDate = (myDate: string): string => {
     return new Date(myDate).toLocaleDateString('en-us');

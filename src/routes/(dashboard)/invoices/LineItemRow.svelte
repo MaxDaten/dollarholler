@@ -6,6 +6,7 @@
 
   export let lineItem: LineItem;
   export let canDelete = false;
+  export let isRequired = false;
 
   let dispatch = createEventDispatcher();
 
@@ -26,6 +27,7 @@
       name="description"
       id="description"
       bind:value={lineItem.description}
+      required={isRequired}
     />
   </div>
 
@@ -42,6 +44,7 @@
         unitPrice = twoDecimals(Number(unitPrice));
         dispatch('updateLineItem');
       }}
+      required={isRequired}
     />
   </div>
 
@@ -57,6 +60,7 @@
       on:blur={() => {
         dispatch('updateLineItem');
       }}
+      required={isRequired}
     />
   </div>
 

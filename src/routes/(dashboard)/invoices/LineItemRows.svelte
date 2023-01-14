@@ -3,12 +3,7 @@
   import Button from '$lib/components/Button.svelte';
   import CircledAmount from '$lib/components/CircledAmount.svelte';
   import LineItemRow from './LineItemRow.svelte';
-  import {
-    centsToDollars,
-    dollarsToCents,
-    sumLineItems,
-    twoDecimals
-  } from '$lib/components/utils/moneyHelpers';
+  import { centsToDollars, sumLineItems, twoDecimals } from '$lib/components/utils/moneyHelpers';
 
   export let lineItems: LineItem[] = [];
 
@@ -37,7 +32,13 @@
 </div>
 
 {#each lineItems as lineItem, index}
-  <LineItemRow {lineItem} on:removeLineItem canDelete={index > 0} on:updateLineItem />
+  <LineItemRow
+    {lineItem}
+    on:removeLineItem
+    canDelete={index > 0}
+    on:updateLineItem
+    isRequired={index === 0}
+  />
 {/each}
 
 <div class="invoice-line-item">
