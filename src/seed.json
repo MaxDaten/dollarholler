@@ -11,12 +11,12 @@
                 "street": "123 Main St",
                 "zip": "10001"
             },
-            "createdAt": "2022-01-01T00:00:00.000Z",
+            "createdAt": "2024-01-01T00:00:00.000Z",
             "dueDate": "2023-12-31T00:00:00.000Z",
             "id": "invoice_001",
             "invoiceNumber": "001",
             "invoiceStatus": "sent",
-            "issueDate": "2022-01-01T00:00:00.000Z",
+            "issueDate": "2024-01-01T00:00:00.000Z",
             "lineItems": [
                 {
                     "amount": 50000,
@@ -32,7 +32,7 @@
                 }
             ],
             "notes": "**Please** pay within 30 days.",
-            "subject": "Invoice for January 2022",
+            "subject": "Invoice for January 2024",
             "terms": "Payment is due within 30 days."
         },
         {
@@ -46,13 +46,13 @@
                 "street": "456 Market St",
                 "zip": "94103"
             },
-            "createdAt": "2022-02-01T00:00:00.000Z",
-            "dueDate": "2022-02-28T00:00:00.000Z",
+            "createdAt": "2024-02-01T00:00:00.000Z",
+            "dueDate": "2024-02-28T00:00:00.000Z",
             "id": "invoice_002",
             "invoiceNumber": "002",
-            "invoiceStatus": "draft",
-            "issueDate": "2022-02-01T00:00:00.000Z",
-            "subject": "Invoice for February 2022"
+            "invoiceStatus": "sent",
+            "issueDate": "2024-02-01T00:00:00.000Z",
+            "subject": "Invoice for February 2024"
         },
         {
             "client": {
@@ -65,12 +65,12 @@
                 "street": "789 Elm St",
                 "zip": "90210"
             },
-            "createdAt": "2022-03-01T00:00:00.000Z",
-            "dueDate": "2022-03-31T00:00:00.000Z",
+            "createdAt": "2024-03-01T00:00:00.000Z",
+            "dueDate": "2024-03-31T00:00:00.000Z",
             "id": "invoice_003",
             "invoiceNumber": "003",
             "invoiceStatus": "paid",
-            "issueDate": "2022-03-01T00:00:00.000Z",
+            "issueDate": "2024-03-01T00:00:00.000Z",
             "lineItems": [
                 {
                     "amount": 75000,
@@ -86,8 +86,8 @@
                 }
             ],
             "notes": "**Thank you** for your business!",
-            "subject": "Invoice for March 2022",
-            "terms": "Payment received on _03/15/2022_."
+            "subject": "Invoice for March 2024",
+            "terms": "Payment received on _03/15/2024_."
         },
         {
             "client": {
@@ -100,12 +100,12 @@
                 "street": "369 Oak St",
                 "zip": "60654"
             },
-            "createdAt": "2022-04-01T00:00:00.000Z",
-            "dueDate": "2022-04-30T00:00:00.000Z",
+            "createdAt": "2024-04-01T00:00:00.000Z",
+            "dueDate": "2024-04-30T00:00:00.000Z",
             "id": "invoice_004",
             "invoiceNumber": "004",
-            "invoiceStatus": "sent",
-            "issueDate": "2022-04-01T00:00:00.000Z",
+            "invoiceStatus": "draft",
+            "issueDate": "2024-04-01T00:00:00.000Z",
             "lineItems": [
                 {
                     "amount": 50000,
@@ -120,8 +120,8 @@
                     "quantity": 1
                 }
             ],
-            "notes": "Payment due on 05/15/2022.",
-            "subject": "Invoice for April 2022",
+            "notes": "Payment due on 05/15/2024.",
+            "subject": "Invoice for April 2024",
             "terms": "Payment is due within 45 days."
         }
     ],
