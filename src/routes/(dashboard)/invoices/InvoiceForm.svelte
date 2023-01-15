@@ -33,6 +33,8 @@
 
   let isModalShowing = false;
 
+  const initialDiscount = invoice.discount || 0;
+
   const AddLineItem = () => {
     invoice.lineItems = [...(invoice.lineItems as []), { ...blankLineItem, id: uuidv4() }];
   };
@@ -44,6 +46,10 @@
 
   const UpdateLineItem = () => {
     invoice.lineItems = invoice.lineItems;
+  };
+
+  const UpdateDiscount = (event: CustomEvent) => {
+    invoice.discount = event.detail.discount;
   };
 
   const handleSubmit = () => {
@@ -203,6 +209,7 @@
       on:addLineItem={AddLineItem}
       on:removeLineItem={RemoveLineItem}
       on:updateLineItem={UpdateLineItem}
+      on:updateDiscount={UpdateDiscount}
     />
   </div>
 

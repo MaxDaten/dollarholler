@@ -6,7 +6,7 @@
                 "city": "New York",
                 "email": "example@gmail.com",
                 "id": "001",
-                "name": "John Smith",
+                "name": "Smart City Solutions Inc.",
                 "state": "NY",
                 "street": "123 Main St",
                 "zip": "10001"
@@ -41,7 +41,7 @@
                 "city": "San Francisco",
                 "email": "example2@gmail.com",
                 "id": "002",
-                "name": "Jane Doe",
+                "name": "Sparkle Tech Inc.",
                 "state": "CA",
                 "street": "456 Market St",
                 "zip": "94103"
@@ -60,7 +60,7 @@
                 "city": "Los Angeles",
                 "email": "example3@gmail.com",
                 "id": "003",
-                "name": "Bob Johnson",
+                "name": "Oceanic Ventures LLC",
                 "state": "CA",
                 "street": "789 Elm St",
                 "zip": "90210"
@@ -95,7 +95,7 @@
                 "city": "Chicago",
                 "email": "example4@gmail.com",
                 "id": "004",
-                "name": "Sophia Taylor",
+                "name": "Oceanic Ventures LLC",
                 "state": "IL",
                 "street": "369 Oak St",
                 "zip": "60654"

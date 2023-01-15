@@ -7,7 +7,7 @@
   import Edit from '$lib/components/Icon/Edit.svelte';
   import Tag from '$lib/components/Tag.svelte';
   import { formatDate, isLate } from '$lib/components/utils/dateHelpers';
-  import { centsToDollars, sumLineItems } from '$lib/components/utils/moneyHelpers';
+  import { centsToDollars, invoiceTotal, sumLineItems } from '$lib/components/utils/moneyHelpers';
   import SlidePanel from '$lib/components/SlidePanel.svelte';
   import InvoiceForm from './InvoiceForm.svelte';
   import ConfirmDelete from './ConfirmDelete.svelte';
@@ -60,7 +60,7 @@
     {invoice.client.name}
   </div>
   <div class="amount text-right font-mono text-sm font-bold lg:text-lg">
-    ${centsToDollars(sumLineItems(invoice.lineItems))}
+    ${centsToDollars(invoiceTotal(invoice.lineItems, invoice.discount))}
   </div>
   <div class="viewButton lg:center hidden text-sm lg:flex lg:text-lg">
     <a href="#" class="text-pastelPurple hover:text-daisyBush"><View /></a>

@@ -4,6 +4,11 @@ export const sumLineItems = (lineItems: LineItem[] = []): number => {
         0
     )
 }
+export const invoiceTotal = (lineItems: LineItem[] = [], discount: number = 0): number => {
+    const lineItemSum = sumLineItems(lineItems)
+    const invoiceItemDiscount = lineItemSum * (0 / 100)
+    return lineItemSum - invoiceItemDiscount
+}
 
 export const centsToDollars = (cents: number): string => {
     const dollars = cents / 100

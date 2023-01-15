@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte';
 
   import Trash from '$lib/components/Icon/Trash.svelte';
-  import { dollarsToCents, twoDecimals } from '$lib/components/utils/moneyHelpers';
+  import { centsToDollars, dollarsToCents, twoDecimals } from '$lib/components/utils/moneyHelpers';
 
   export let lineItem: LineItem;
   export let canDelete = false;
@@ -10,8 +10,8 @@
 
   let dispatch = createEventDispatcher();
 
-  let unitPrice: string = twoDecimals(lineItem.amount / lineItem.quantity);
-  let amount: string = twoDecimals(lineItem.amount);
+  let unitPrice: string = centsToDollars(lineItem.amount / lineItem.quantity);
+  let amount: string = centsToDollars(lineItem.amount);
 
   $: {
     amount = twoDecimals(lineItem.quantity * Number(unitPrice));
