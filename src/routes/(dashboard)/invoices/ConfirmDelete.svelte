@@ -4,6 +4,7 @@
   import Modal from '$lib/components/Modal.svelte';
   import { centsToDollars, sumLineItems } from '$lib/components/utils/moneyHelpers';
   import { deleteInvoice } from '$lib/stores/InvoiceStore';
+  import { snackbar } from '$lib/stores/SnackbarStore';
 
   export let invoice: Invoice;
   export let isModalShowing = false;
@@ -33,6 +34,10 @@
         onClick={() => {
           deleteInvoice(invoice);
           dispatch('close');
+          snackbar.send({
+            message: 'Your invoice was successfully deleted.',
+            type: 'success'
+          });
         }}
         style="destructive"
         isAnimated={false}
